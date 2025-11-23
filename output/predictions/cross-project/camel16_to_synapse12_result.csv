@@ -1,0 +1,4 @@
+Method,Accuracy,Precision,Recall,F1-Score,AUC
+SVM,0.68,0.62,0.09,0.16,0.7
+KNN,0.66,0.49,0.34,0.4,0.61
+RF,0.7,0.63,0.28,0.39,0.66

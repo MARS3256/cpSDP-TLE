@@ -1,0 +1,617 @@
+*
+Introduction to AI
+1
+Introduction to Artificial Intelligence
+Mohammad Sultan Mahmud, Ph.D.
+
+Modified by Longin Jan Latecki
+
+*
+Introduction to AI
+2
+Goal of the Course
+A fundamental understanding of the basic concepts behind Artificial Intelligence
+What does it mean for a machine to exhibit AI?
+
+A practical understanding of how to apply AI to real world problems
+
+PLEASE ASK QUESTIONS!!!
+2
+
+*
+Introduction to AI
+3
+What is an AI System?
+World
+Agent
+Sensing
+Computation
+Action
+
+Components of an AI System
+World
+This is where the AI agent lives
+Agent
+Sensing: Takes information from the world
+Computation: Makes computations based on what it has sensed (perhaps using a time history of senor readings)
+Action: Acts in the world to change the state of the agent within it (towards some purpose).
+*
+Introduction to AI
+4
+
+What are some common uses (successes) of AI Systems?
+Web search: google, ask, yahoo….
+Loan Applications
+Marketing
+Economic Analysis
+Stocks to buy….
+Products to produce…
+Prices to charge….
+Federal economic policies…
+Computer Games 
+Criminology 
+*
+Introduction to AI
+5
+
+*
+Introduction to AI
+6
+AI System
+World
+Agent
+Sensing
+Computation
+Action
+physical world
+robotics
+Internet
+Computer program
+game
+
+data received from
+the world 
+Plan actions based  on
+sensor observations and
+the results of previous
+actions
+
+“Move” the agent to some new state in the worlds
+
+
+Some AI Systems that are Better Than Humans (1)
+Checkers
+Chinook was the first computer program to win a checkers world championship (using heuristics)
+http://www.cs.ualberta.ca/~chinook/
+Checkers is now solved
+http://www.cs.ualberta.ca/~chinook/publications/solving_checkers.html
+There is a proof that nothing can now beat this program (no more heuristics)
+*
+Introduction to AI
+7
+
+Some AI Systems that are Better Than Humans (2)
+Chess
+DEEP BLUE was the first computer program to beat the world chess champion (using powerful computers and a bunch of very good heuristics)
+http://en.wikipedia.org/wiki/IBM_Deep_Blue
+Not yet solved…
+*
+Introduction to AI
+8
+
+Some AI Systems that are Better Than Humans (3)
+Backgammon
+TD gammon was the first program to beat the worlds best players (Gerald Tesauro)
+http://researchweb.watson.ibm.com/massive/tdl.html
+
+*
+Introduction to AI
+9
+
+Some AI Systems that are Better Than Humans (4)
+Robotics for manufacturing in structured factories
+Many products (cars, computers, etc..) are made using robots
+*
+Introduction to AI
+10
+
+Some Failures of AI
+The game GO
+Simple rules but very large search space…
+Expert systems (in general)
+These attempted to encode an experts knowledge into an autonomous reasoning systems
+Robotics in unstructured environments. A robot cannot
+Clean my house
+Cook when I don’t want to
+Wash my clothes
+Cut my grass
+Fix my car (or take it to be fixed)
+i.e. do the things that I don’t feel like doing…
+*
+Introduction to AI
+11
+
+*
+Introduction to AI
+12
+Robotics
+Robotics is AI in the physical world
+It is the hardest subfield of AI because robots must sense and act in the physical world
+
+The computer revolution has changed the world….
+
+However, the robotics revolution, when it happens, will make the computer revolution pale in comparison
+
+*
+Introduction to AI
+13
+A Open Problem in AI/Robotics?
+“Vision-based autonomous navigation in unstructured outdoor environments”
+
+The problem of navigating between 2 GPS waypoints (more than a few hundred metres apart) in unstructured outdoor environments is unsolved!
+
+*
+Introduction to AI
+14
+ What About the DARPA Grand Challenge 2005?
+Autonomous Navigation in the Desert over a 132 mile course.
+5 Teams succeeded!
+http://www.darpa.mil/grandchallenge05/gcorg/index.html
+This was a monumental achievement in autonomous robotics
+HOWEVER: This was not an unstructured environment!
+GPS waypoints were carefully chosen, sometimes less than a meter apart.
+
+*
+Introduction to AI
+15
+Environments that DARPA Grand Challenge winners would find challenging:
+
+What is AI?
+Views of AI fall into four categories:
+	Thinking humanly	Thinking rationally 
+	Acting humanly	Acting rationally 
+
+Warning, I advocate for “acting rationally” based on Machine Learning 
+but I am willing to hear other arguments and change my mind
+
+*
+16
+Introduction to AI
+
+Acting humanly: Turing Test
+Turing (1950) "Computing machinery and intelligence":
+"Can machines think?" 🡪 "Can machines behave intelligently?"
+Operational test for intelligent behavior: the Imitation Game
+
+
+
+
+
+Predicted that by 2000, a machine might have a 30% chance of fooling a lay person for 5 minutes
+Anticipated all major arguments against AI in following 50 years
+Suggested major components of AI: knowledge, reasoning, language understanding, learning
+*
+17
+Introduction to AI
+
+Thinking humanly: cognitive modeling
+1960s "cognitive revolution": information-processing psychology 
+
+Requires scientific theories of internal activities of the brain
+How to validate? Requires 
+    1) Predicting and testing behavior of human subjects (top-down), or 
+    2) Direct identification from neurological data (bottom-up)
+Both approaches (roughly, Cognitive Science and Cognitive Neuroscience)  are now distinct from AI
+*
+18
+Introduction to AI
+
+Thinking rationally: "laws of thought"
+Aristotle: what are correct arguments/thought processes?
+
+Several Greek schools developed various forms of logic: notation and rules of derivation for thoughts; may or may not have proceeded to the idea of mechanization
+
+Direct line through mathematics and philosophy to modern AI
+
+Problems: 
+Not all intelligent behavior is mediated by logical deliberation
+What is the purpose of thinking? What thoughts should I have?Should thinking need to be associated with actions?
+*
+19
+Introduction to AI
+
+Acting rationally: rational agent
+Rational behavior: doing the right thing
+
+The right thing: that which is expected to maximize goal achievement, given the available information
+Problem: How do we know the agent is doing this?
+
+Doesn't necessarily involve thinking – e.g., blinking reflex – but  thinking should be in the service of rational action
+*
+20
+Introduction to AI
+
+Rational agents
+An agent is an entity that perceives and acts
+
+This course is about designing rational agents
+
+Abstractly, an agent is a function from percept histories to actions:
+[f: P* 🡪 A]
+For any given class of environments and tasks, we seek the agent (or class of agents) with the best performance
+
+Caveats:
+computational limitations make perfect rationality unachievable
+design best program for given machine resource
+Can we ever know if an agent is acting rationally?
+*
+21
+Introduction to AI
+
+AI prehistory
+Philosophy:		Logic, methods of reasoning, mind as physical 		 	system, foundations of learning, language,			rationality
+Mathematics:		Formal representation and proof algorithms,			computation, (un)decidability, (in)tractability,			probability
+Economics:		Utility, decision theory 
+Neuroscience:	               physical substrate for mental activity
+Psychology :		Phenomena of perception and motor control,			experimental techniques
+Computer 		Building fast computers (fast enough?)Engineering:
+Control theory:	Design systems that maximize an objective			function over time. 
+Linguistics:		Knowledge representation, grammar
+*
+22
+Introduction to AI
+
+Abridged history of AI
+1943     	McCulloch & Pitts: Boolean circuit model of brain
+1950     	Turing's "Computing Machinery and Intelligence"
+1956		Dartmouth meeting: "Artificial Intelligence" adopted
+1952—69	Great enthusiasm for AI! 
+1950s	Early AI programs, including Samuel's checkers		program, Newell & Simon's Logic Theorist, 		Gelernter's Geometry Engine
+1965		Robinson's complete algorithm for logical reasoning
+1966—73	AI discovers computational complexity		Neural network research almost disappears
+1969—79	Early development of knowledge-based systems
+1980-- 	AI becomes an industry 
+1986-- 	Neural networks (Machine Learning) return to popularity
+1990--              Machine Learning, Statistics and Mathematics join forces
+1987--	AI becomes a science 
+1995--	The emergence of intelligent agents 
+*
+23
+Introduction to AI
+
+Some state of the art AI
+Deep Blue defeated the reigning world chess champion Garry Kasparov in 1997 
+Proved a mathematical conjecture (Robbins conjecture) unsolved for decades 
+No hands across America (driving autonomously 98% of the time from Pittsburgh to San Diego) 
+During the 1991 Gulf War, US forces deployed an AI logistics planning and scheduling program that involved up to 50,000 vehicles, cargo, and people 
+NASA's on-board autonomous planning program controlled the scheduling of operations for a spacecraft 
+Proverb solves crossword puzzles better than most humans
+*
+24
+Introduction to AI
+
+*
+Introduction to AI
+25
+Personal View of AI by Greg Grudic
+I want to build a robot that will
+Clean my house
+Cook when I don’t want to
+Wash my clothes
+Cut my grass
+Fix my car (or take it to be fixed)
+i.e. do the things that I don’t feel like doing…
+Therefore: AI is (to me) the science of building machines (agents) that act rationally with respect to a goal.
+
+*
+Introduction to AI
+26
+World
+Agent
+Sensing
+Computation
+Action
+physical world
+robotics
+Internet
+Computer program
+game
+
+data received from
+the world 
+Plan actions based  on
+sensor observations and
+the results of previous
+actions
+
+“Move” the agent to some new state in the worlds
+
+Agent: sensing, computation, and action
+
+*
+Introduction to AI
+27
+What is a Rational Agent?
+An agent is an entity that senses, computes and acts in some world
+A rational agent is one that does the right thing
+The right thing: that which is expected to maximize goal achievement (accomplishing tasks that Greg doesn’t feel like doing), given the available information
+This is not a new idea: 
+Aristotle (Nicomachean Ethics): Every art and every inquiry, and similarly every action and pursuit, is thought to aim at some good
+
+*
+Introduction to AI
+28
+Elements of AI
+Learning
+Reasoning
+Representation
+
+*
+Introduction to AI
+29
+(My) Elements of AI
+Learning
+Reasoning
+Representation
+
+*
+Introduction to AI
+30
+Why Must Representation and Reasoning be Encompassed by Learning?
+Fundamental lesson of AI (learned in the 1980’s):
+It is not possible to hand code knowledge about anything but the most trivial problem domains!
+Uncertainty is a key problem!
+Expert Systems: largely failed because an expert (e.g. doctor) doesn’t know how to formalize (code) what makes her an expert!
+For Example: I’m an expert on chairs but I can’t (and no one can!) write a program that identifies chairs in an image
+However, using ML techniques we are closer to this goal!
+How can I reason rationally about a world I cannot encode knowledge about?
+I do not believe that an agent can gain knowledge about a world without sampling it and learning from those samples….
+
+AI Agent: A Different Perspective
+*
+Introduction to AI
+31
+world
+Sensing
+Actions
+Computation
+State
+Decisions/Planning
+Agent
+Uncertainty
+Signals
+Symbols
+(The
+Grounding
+Problem)
+Not typically 
+addressed in CS
+
+*
+Introduction to AI
+32
+Why is Machine Learning Important?
+Machine Learning is a Principled Methodology for dealing with uncertainty (noise) in
+world
+sensors
+computation
+action
+
+*
+Introduction to AI
+33
+Where can Machine Learning Algorithms be Found?
+Marketing
+Who should a company target for advertising?
+Profiling
+Is passenger 57 likely to hijack the plane?
+User interfaces
+Making it easier to interact with a PC by anticipating what I am doing.
+Document characterization
+Searching the web for things of interest.
+Bioinformatics
+Human genome project
+Which gene is responsible for the cancer that runs in my family?
+Data mining
+“Data doubles every year”, Dunham 2002
+ML algorithms are used to make sense of this data
+Economics, medical diagnosis, robotics, computer vision, manufacturing, inventory control, elevator operation….
+
+*
+Introduction to AI
+34
+What is Machine Learning?
+“The goal of machine learning is to build computer systems that can adapt and learn from their experience.” 
+Tom Dietterich
+
+What does this mean?
+When are ML algorithms NOT needed?
+
+*
+Introduction to AI
+35
+A Generic System (Agent?) 
+System
+…
+…
+Input Variables:
+Hidden Variables:
+Output Variables:
+
+*
+Introduction to AI
+36
+Another Definition of Machine Learning
+Machine Learning algorithms discover the relationships between the variables of a system (input, output and hidden) from direct samples of the system
+
+These algorithms originate form many fields:
+Statistics, mathematics, theoretical computer science, physics, neuroscience, etc
+
+*
+Introduction to AI
+37
+When are ML algorithms NOT needed?
+When the relationships between all relevant system variables (input, output, and hidden) is adequately understood!
+
+This is NOT the case for many complex real systems!
+
+*
+Introduction to AI
+38
+Main Subfields of Machine Learning
+Supervised learning
+Classification
+Regression
+Semi-Supervised (Transduction) learning
+Active learning
+Reinforcement Learning
+Unsupervised Learning
+
+*
+Introduction to AI
+39
+Learning Classification Models
+Collect Training data
+Build Model: happy = f(feature space)
+Make a prediction
+High
+Dimensional
+Feature
+Space
+
+*
+Introduction to AI
+40
+Learning Regression Models
+Collect Training data
+Build Model: stock value = f(feature space)
+Make a prediction
+Feature Space
+Stock
+Value
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+
+*
+Introduction to AI
+41
+Search
+AI can be thought of as
+Specification of a GOAL
+Optimization criteria…
+Method for searching action and sensor space to achieve the goal
+Two types of searches
+Symbolic (logic, reasoning, etc)
+Numeric – establish a continuous search space (topology)
+Search in the real world is hard….
+Efficient solutions require constraints in search space
+Machine Learning is one framework for efficiently constraining search…
+
+*
+Introduction to AI
+42
+Planning
+Start with an assumed structure in the problem space
+e.g. robot in a Cartesian World (3-D map) wants to get to a GPS goal position from some start GPS position
+Structure is used to plan a sequence of actions from some initial state to a goal state.
+Goal
+Robot
+Obstacle
+Static 
+Navigational
+ Feature
+
+*
+Introduction to AI
+43
+Optimal Decision Theory
+Acting under uncertainty
+Measuring uncertainty in complex environments is the domain of Machine Learning
+Given all the available information, what is the optimal decision (or action) that the agent should take?
+
+*
+Introduction to AI
+44
+Computer Vision
+The camera is our best sensor for physical human environments…
+Humans are extremely good at interpreting the world visually
+AI systems that work in the human physical world need  to utilize visual data
+Computer vision uses realistic constraints and knowledge of camera geometry to infer knowledge about the world from 2D images
+
+*
+Introduction to AI
+45
+Robotics
+Robotics is AI in the physical world
+It is the hardest subfield of AI because robots must sense and act in the (uncertain) physical world
+AI inside a computer (internet) is much more constrained
+The computer revolution has changed the world….
+However, the robotics revolution, when it happens, will make the computer revolution pale in comparison
+
+The main challenge in robotics:
+Visual perception
+Visual perception is the ability to interpret the surrounding environment by processing information that is contained in visible light.
+The machinery that accomplishes these tasks is by far the most powerful and complex of the sensory systems. The retina, which contains 150 million light-sensitive rod and cone cells, is actually an outgrowth of the brain. In the brain itself, neurons devoted to visual processing number in the hundreds of millions and take up about 30% of the cortex, as compared with 8% for touch and just 3% for hearing.
+*
+Introduction to AI
+46
+
+Human Visual Processing
+The optic nerves convey signals from the retinas first to two structures called the lateral geniculate bodies, which reside in the thalamus, a part of the brain that functions as a relay station for sensory messages arriving from all parts of the body. From there the signals proceed to a region of the brain at the back of the skull, the primary visual cortex, also known as V1. They then feed into a second processing area, called V2, and branch out to a series of other, higher centers-- dozens, perhaps--with each one carrying out a specialized function, such as detecting color, detail, depth, movement, or shape or recognizing faces.
+But how do we make sense out of the visual data?
+*
+Introduction to AI
+47
+
+48
+Object Recognition Process:
+Source:	
+2D image of a 3D object
+Matching: Correspondence of Visual Parts
+Contour Segmentation
+Contour Extraction
+Object Segmentation
+Contour Cleaning, e.g., Evolution
+Slide by Rolf Lakaemper
+*
+Introduction to AI
+48
